@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
-import { connect } from "react-redux";
+import { connect } from 'react-redux'
 import store from './store'
 import { addToDo, removeToDo } from './actions'
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
     this.state = {
-      input: ""
+      input: ''
     }
   }
-  render() {
-    const { onAddToDo, onRemoveToDo } = this.props;
-    const { input } = this.state;
+  render () {
+    const { onAddToDo, onRemoveToDo } = this.props
+    const { input } = this.state
     return (
       <div className="App">
         <header className="App-header">
@@ -23,21 +23,21 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <ul>
-        {
-          this.props.todos.map(todo => {
-            return (
-              <li key={todo}>
-                <span>{todo}</span>
-                <button onClick={ () => onRemoveToDo(todo) } >削除</button>
-              </li>
-            );
-          })
-        }
+          {
+            this.props.todos.map(todo => {
+              return (
+                <li key={todo}>
+                  <span>{todo}</span>
+                  <button onClick={ () => onRemoveToDo(todo) } >削除</button>
+                </li>
+              )
+            })
+          }
         </ul>
         <input type="text" onChange={ e => this.setState({ input: e.target.value })} />
         <button onClick={ () => onAddToDo(this.state.input) } >追加</button>
       </div>
-    );
+    )
   }
 }
 
@@ -49,13 +49,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddToDo(todo) {
+    onAddToDo (todo) {
       dispatch(addToDo(todo))
     },
-    onRemoveToDo(todo) {
+    onRemoveToDo (todo) {
       dispatch(removeToDo(todo))
     }
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)
