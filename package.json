@@ -27,6 +27,7 @@
     "file-loader": "^1.1.11",
     "flow-bin": "^0.76.0",
     "gh-pages": "^1.2.0",
+    "husky": "^0.14.3",
     "image-webpack-loader": "^4.3.1",
     "jest": "^23.4.0",
     "style-loader": "^0.21.0",
@@ -35,6 +36,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
@@ -46,6 +48,8 @@
     "start": "webpack-dev-server --mode development",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "test": "eslint src --fix && flow"
+    "test": "eslint src --fix && flow",
+    "precommit": "yarn test",
+    "prepush": "yarn test"
   }
 }
