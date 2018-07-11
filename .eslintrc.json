@@ -1,6 +1,10 @@
 {
-    "extends":"standard",
+    "extends": [
+        "standard",
+        "plugin:flowtype/recommended"
+    ],
     "plugins" : [
-        "compat"
+        "compat",
+        "flowtype"
     ]
 }
