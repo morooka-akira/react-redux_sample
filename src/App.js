@@ -6,6 +6,9 @@ import { connect } from 'react-redux'
 import store from './store'
 import { addToDo, removeToDo } from './actions'
 
+import HelloButton from './container/hello-button'
+import Message from './container/message'
+
 class App extends Component {
   constructor () {
     super()
@@ -36,6 +39,8 @@ class App extends Component {
         </ul>
         <input type="text" onChange={ e => this.setState({ input: e.target.value })} />
         <button onClick={ () => onAddToDo(this.state.input) } >追加</button>
+        <HelloButton />
+        <Message />
       </div>
     )
   }

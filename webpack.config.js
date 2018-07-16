@@ -12,14 +12,17 @@ const config = {
     port: 8080,
     inline: true // ソースファイルに変更があったときに自動的に実行ファイルを作り直す
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules:[
       {
-        test: /\.js$/,
+        test: /\.(jsx|js)$/,
         exclude: path.resolve(__dirname, 'node_modules'),
         loader: 'babel-loader',
         query: { // jsxとes6の変換を指定
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react', 'flow']
         }
       },
       {
