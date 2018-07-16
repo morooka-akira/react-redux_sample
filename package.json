@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "immutable": "4.0.0-rc.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
@@ -49,7 +50,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "test": "eslint src --fix && flow",
-    "precommit": "yarn test",
     "prepush": "yarn test"
   }
 }
