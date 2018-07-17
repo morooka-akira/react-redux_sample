@@ -1,4 +1,9 @@
+// @flow
+
+// reducerをcombineしてまとめて返すためのファイル
 import { combineReducers } from 'redux'
+
+import helloReducer from './reducer/hello'
 
 export function todos (state = { list: [] }, action) {
   switch (action.type) {
@@ -20,5 +25,6 @@ export function todos (state = { list: [] }, action) {
 }
 
 export default combineReducers({
-  todos
+  todos,
+  hello: helloReducer
 })

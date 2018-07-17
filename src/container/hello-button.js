@@ -10,7 +10,7 @@ const mapStateToProps = () => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  handleClick: () => { dispatch(sayHello('Hellow')) },
+  handleClick: () => { dispatch(sayHello('Hellow')) }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Button)
