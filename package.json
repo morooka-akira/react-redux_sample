@@ -39,6 +39,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "immutable": "4.0.0-rc.2",
+    "npm": "^6.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
