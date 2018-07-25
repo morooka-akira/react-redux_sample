@@ -12,5 +12,9 @@
         "compat",
         "flowtype",
         "react"
-    ]
+    ],
+    "rules": {
+        "react/prop-types": 0,
+        "no-duplicate-imports": 0
+    }
 }

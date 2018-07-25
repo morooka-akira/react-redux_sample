@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
@@ -8,7 +9,15 @@ import { addToDo, removeToDo } from './actions'
 import HelloButton from './container/hello-button'
 import Message from './container/message'
 
-class App extends Component {
+type Props = {
+  onAddToDo: Function,
+  onRemoveToDo: Function,
+  todos: Function
+};
+type State = {
+  input: string
+}
+class App extends Component<Props, State> {
   constructor () {
     super()
     this.state = {
