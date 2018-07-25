@@ -3,7 +3,6 @@ import logo from './logo.svg'
 import './App.css'
 
 import { connect } from 'react-redux'
-import store from './store'
 import { addToDo, removeToDo } from './actions'
 
 import HelloButton from './container/hello-button'
@@ -17,7 +16,7 @@ class App extends Component {
     }
   }
   render () {
-    const { onAddToDo, onRemoveToDo } = this.props
+    const { onAddToDo, onRemoveToDo, todos } = this.props
     const { input } = this.state
     return (
       <div className="App">
@@ -27,7 +26,7 @@ class App extends Component {
         </header>
         <ul>
           {
-            this.props.todos.map(todo => {
+            todos.map(todo => {
               return (
                 <li key={todo}>
                   <span>{todo}</span>
@@ -38,7 +37,7 @@ class App extends Component {
           }
         </ul>
         <input type="text" onChange={ e => this.setState({ input: e.target.value })} />
-        <button onClick={ () => onAddToDo(this.state.input) } >追加</button>
+        <button onClick={ () => onAddToDo(input) } >追加</button>
         <HelloButton />
         <Message />
       </div>

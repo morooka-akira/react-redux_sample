@@ -5,10 +5,12 @@
     },
     "extends": [
         "standard",
-        "plugin:flowtype/recommended"
+        "plugin:flowtype/recommended",
+        "plugin:react/recommended"
     ],
     "plugins" : [
         "compat",
-        "flowtype"
+        "flowtype",
+        "react"
     ]
 }
