@@ -4,11 +4,14 @@
 [include]
 
 [libs]
-~/flow-typed/
 
 [lints]
 
 [options]
 suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
+# 以下記載しないとnode_modules内のflow定義が参照されない
+module.system.node.resolve_dirname=.
+module.system.node.resolve_dirname=src
+module.system.node.resolve_dirname=node_modules
 
 [strict]
