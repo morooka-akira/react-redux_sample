@@ -5,7 +5,7 @@ import { combineReducers } from 'redux'
 
 import helloReducer from './reducer/hello'
 
-export function todos (state = { list: [] }, action) {
+export function todos (state: Object = { list: [] }, action: Object) {
   switch (action.type) {
     case 'ADD_TO_DO':
       state.list = state.list.concat(action.todo)

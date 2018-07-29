@@ -5,6 +5,7 @@ import './App.css'
 
 import { connect } from 'react-redux'
 import { addToDo, removeToDo } from './actions'
+import type { Dispatch } from 'redux'
 
 import HelloButton from './container/hello-button'
 import Message from './container/message'
@@ -60,7 +61,7 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch: Dispatch<*>) => {
   return {
     onAddToDo (todo) {
       dispatch(addToDo(todo))
