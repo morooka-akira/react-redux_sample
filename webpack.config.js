@@ -29,7 +29,7 @@ const config = {
         loader: 'babel-loader',
         // loaderに渡すクエリパラメタ
         query: { // jsxとes6の変換を指定
-          presets: ['es2015', 'react', 'flow']
+          presets: ['es2015', 'react-app', 'flow']
         }
       },
       {
