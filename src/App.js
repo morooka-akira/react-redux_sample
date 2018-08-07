@@ -8,7 +8,9 @@ import { addToDo, removeToDo } from './actions'
 import type { Dispatch } from 'redux'
 
 import HelloButton from './container/hello-button'
+import HelloAsyncButton from './container/hello-async-button'
 import Message from './container/message'
+import MessageAsync from './container/message-async'
 
 type Props = {
   onAddToDo: Function,
@@ -48,8 +50,10 @@ class App extends Component<Props, State> {
         </ul>
         <input type="text" onChange={ e => this.setState({ input: e.target.value })} />
         <button onClick={ () => onAddToDo(input) } >追加</button>
-        <HelloButton />
         <Message />
+        <HelloButton />
+        <MessageAsync />
+        <HelloAsyncButton />
       </div>
     )
   }
